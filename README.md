@@ -1,16 +1,12 @@
 # CodeReview BOT
 
-> A code review robot powered by ChatGPT
+> Robô para fazer Code Reviews com ChatGPT
 
-Translation Versions: [ENGLISH](./README.md) | [中文简体](./README.zh-CN.md) | [中文繁體](./README.zh-TW.md) | [한국어](./README.ko.md)
+Versão traduzida em Português
 
-## Usage
+## Como usar
 
-## Install
-
-Install: [apps/cr-gpt](https://github.com/apps/cr-gpt);
-
-### Configuration
+### Configuração
 
 1. Go to the repo homepage which you want integrate this bot
 2. click `settings`
@@ -18,10 +14,10 @@ Install: [apps/cr-gpt](https://github.com/apps/cr-gpt);
 4. Change to `Variables` tab, create a new variable `OPENAI_API_KEY` with the value of your open api key
    <img width="1465" alt="image" src="https://user-images.githubusercontent.com/13167934/218533628-3974b70f-c423-44b0-b096-d1ec2ace85ea.png">
 
-### Start using
+### Comece usando
 
-1. The robot will automatically do the code review when you create a new Pull request, the review information will show in the pr timeline / file changes part.
-2. After `git push` update the pull request, cr bot will re-review the changed files
+1. O robô vai fazer code review automaticamente a partir do momento que você criar um novo pull request. As informações do review estarão disponíveis em comentário.
+2. Depois de um `git push` atualizando uma pull request, o bot fará review novamente nos arquivos alterados.
 
 example:
 
@@ -29,7 +25,7 @@ example:
 
 <img width="1052" alt="image" src="https://user-images.githubusercontent.com/13167934/218999459-812206e1-d8d2-4900-8ce8-19b5b6e1f5cb.png">
 
-### Using Github Actions
+### Usando Github Actions (Recomendado)
 
 > this is a recommended way as github bot is serving on a humble vps, I can't make sure it's always stable
 
@@ -53,12 +49,11 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - uses: anc95/ChatGPT-CodeReview@main
+      - uses: victornery/ChatGPT-CodeReview@main
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           # Optional
-          LANGUAGE: Chinese
           MODEL:
           top_p: 1
           temperature: 1
@@ -109,8 +104,8 @@ For more, check out the [Contributing Guide](CONTRIBUTING.md).
 
 ## Credit
 
-this project is inpired by [codereview.gpt](https://github.com/sturdy-dev/codereview.gpt)
+O projeto original foi criado pelo [anc95](https://github.com/anc95) e inspirado no [codereview.gpt](https://github.com/sturdy-dev/codereview.gpt).
 
-## License
+## Licença
 
 [ISC](LICENSE) © 2023 anc95
